@@ -40,13 +40,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Name:"
+                android:id="@+id/propertyNameText"
+                android:layout_alignTop="@+id/frameLayout"
+                android:layout_toRightOf="@+id/frameLayout"
+                android:layout_toEndOf="@+id/frameLayout"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/nameTextView"
                 android:layout_column="1" />
+
         </TableRow>
 
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Value:"
+                android:id="@+id/propertyValueText"
+                android:layout_below="@+id/propertyNameText"
+                android:layout_toRightOf="@+id/frameLayout"
+                android:layout_toEndOf="@+id/frameLayout" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,6 +82,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Rent value:"
+                android:id="@+id/rentPriceText"
+                android:layout_below="@+id/propertyValueText"
+                android:layout_toRightOf="@+id/frameLayout"
+                android:layout_toEndOf="@+id/frameLayout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/rentValueTextView"
                 android:layout_column="1" />
         </TableRow>
@@ -69,6 +98,16 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mortgage Value:"
+                android:id="@+id/mortgageValueText"
+                android:layout_column="0"
+                android:layout_below="@+id/rentPriceText"
+                android:layout_toRightOf="@+id/frameLayout"
+                android:layout_toEndOf="@+id/frameLayout" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,10 +121,27 @@
             android:layout_height="fill_parent">
 
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Make offer!"
+                android:clickable="true"
+                android:enabled="true"
+                android:id="@+id/makeOfferButton"
+                android:layout_column="0"
+                android:layout_below="@+id/mortgageValueText"
+                android:layout_alignRight="@+id/mortgageValueText"
+                android:layout_alignEnd="@+id/mortgageValueText" />
+        </TableRow>
     </TableLayout>
 
     <FrameLayout
-        android:layout_width="220dp"
+        android:layout_width="300dip"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -176,73 +232,22 @@
         </TabHost>
     </FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name:"
-        android:id="@+id/propertyNameText"
-        android:layout_alignTop="@+id/frameLayout"
-        android:layout_toRightOf="@+id/frameLayout"
-        android:layout_toEndOf="@+id/frameLayout" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Value:"
-        android:id="@+id/propertyValueText"
-        android:layout_below="@+id/propertyNameText"
-        android:layout_toRightOf="@+id/frameLayout"
-        android:layout_toEndOf="@+id/frameLayout" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rent value:"
-        android:id="@+id/rentPriceText"
-        android:layout_below="@+id/propertyValueText"
-        android:layout_toRightOf="@+id/frameLayout"
-        android:layout_toEndOf="@+id/frameLayout" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mortgage Value:"
-        android:id="@+id/mortgageValueText"
-        android:layout_column="0"
-        android:layout_below="@+id/rentPriceText"
-        android:layout_toRightOf="@+id/frameLayout"
-        android:layout_toEndOf="@+id/frameLayout" />
-
     <TableRow
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/mortgageValueText"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/frameLayout"
         android:layout_toEndOf="@+id/frameLayout"
-        android:layout_marginTop="84dp"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_alignParentBottom="true">
 
         <NumberPicker
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/numberPicker2"
+            android:layout_height="100dip"
+            android:id="@+id/numberPicker"
             android:layout_column="0"
             android:layout_span="2"
             android:orientation="vertical"
             android:layout_weight="0.23" />
     </TableRow>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Make offer!"
-        android:clickable="true"
-        android:enabled="true"
-        android:id="@+id/makeOfferButton"
-        android:layout_column="0"
-        android:layout_span="2"
-        android:layout_below="@+id/mortgageValueText"
-        android:layout_alignRight="@+id/mortgageValueText"
-        android:layout_alignEnd="@+id/mortgageValueText" />
 
 </RelativeLayout>

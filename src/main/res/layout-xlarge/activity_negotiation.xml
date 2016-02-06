@@ -48,7 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/nameTextView"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -66,7 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/valueTextView"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -84,7 +86,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rentValueTextView"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -103,7 +106,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/mortgageValueTextView"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
