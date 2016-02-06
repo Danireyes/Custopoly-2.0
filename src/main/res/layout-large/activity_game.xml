@@ -1,0 +1,239 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iplusplus.custopoly.View.GameActivity"
+    android:background="@android:color/holo_purple" android:rowCount="6" android:columnCount="4"
+    android:rowOrderPreserved="true" android:useDefaultMargins="false" android:alignmentMode="alignMargins"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_game_tv_player"
+        android:layout_row="0"
+        android:layout_column="2" android:text="PLAYER" android:singleLine="false"
+        android:gravity="center_vertical" android:layout_gravity="center_horizontal"
+        android:layout_columnWeight="1" android:layout_marginTop="20dp" android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_game_tv_money" android:layout_row="0"
+        android:layout_column="3" android:text="MONEY" android:layout_gravity="center_horizontal"
+        android:textColor="#ff36f76f" android:layout_columnWeight="1" android:layout_marginTop="20dp"
+        />
+    <Button style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="END TURN" android:id="@+id/activity_game_bt_endTurn"
+        android:textSize="12sp" android:textStyle="normal"
+        android:layout_column="2" android:layout_row="1" android:layout_gravity="fill_horizontal|center_horizontal"
+        android:layout_columnSpan="2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUY"
+        android:id="@+id/activity_game_bt_buy"
+        android:layout_row="0" android:layout_column="0"
+        android:layout_gravity="center_vertical"
+        android:layout_rowSpan="5" android:layout_rowWeight="1" android:layout_marginBottom="20dp"/>
+    <Button style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="MORE OPTIONS" android:id="@+id/activity_game_bt_moreOptions"
+        android:textSize="12sp"
+        android:textStyle="normal" android:textAlignment="textEnd"
+        android:singleLine="true" android:layout_row="2" android:layout_column="2"
+        android:layout_gravity="fill_horizontal" android:layout_columnSpan="2" android:layout_rowSpan="1"
+        android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    <ImageView
+        android:layout_width="460dip"
+        android:layout_height="460dip"
+        android:id="@+id/activity_game_iv_boardBackground"
+        android:focusable="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/template_board" android:layout_column="1" android:layout_row="0"
+        android:layout_rowSpan="5" android:adjustViewBounds="true" android:cropToPadding="false"
+        android:layout_gravity="fill_horizontal|center_horizontal"
+        android:longClickable="false"
+        android:nestedScrollingEnabled="true" android:layout_rowWeight="1"/>
+    <TableLayout
+        android:layout_width="460dip"
+        android:layout_height="460dip"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/template_board" android:layout_column="1" android:layout_row="0"
+        android:layout_rowSpan="5" android:adjustViewBounds="false" android:cropToPadding="false"
+        android:longClickable="false" android:maxHeight="400dp" android:maxWidth="400dp"
+        android:columnCount="100" android:rowCount="100"
+        android:alignmentMode="alignMargins" android:columnOrderPreserved="true"
+        android:useDefaultMargins="false"
+        android:rowOrderPreserved="false" android:layout_columnSpan="1"
+        android:showDividers="middle|beginning|end" android:divider="@android:color/holo_green_light"
+        android:stretchColumns="11" android:id="@+id/activity_game_tl_board" android:layout_rowWeight="1">
+        <TableRow
+            android:layout_width="60dip"
+            android:layout_height="80dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_20"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_21"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_22"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_23"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_24"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_25"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_26"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_27"/>
+            <GridLayout android:layout_width="38dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_28"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_29"/>
+            <GridLayout android:layout_width="65dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_30"/>
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="50dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_19"
+                android:orientation="horizontal" />
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_31"
+                android:orientation="horizontal"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout
+                android:layout_width="65dip"
+                android:layout_height="38dip"
+                android:id="@+id/activity_game_board_18">
+            </GridLayout>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_32"
+                android:orientation="horizontal"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_17"/>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_33"
+                android:orientation="horizontal"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_16"/>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_34"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_15"
+                android:orientation="horizontal"/>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_35"
+                android:orientation="horizontal"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_14"
+                android:orientation="horizontal"/>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_36"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_13"
+                android:orientation="horizontal"/>
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_37"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_12"
+                android:orientation="horizontal"
+                android:layout_gravity="top" />
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_38"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="30dip">
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_11"
+                android:orientation="horizontal" />
+
+            <GridLayout android:layout_width="65dip" android:layout_height="38dip"
+                android:id="@+id/activity_game_board_39"
+                android:layout_column="10" />
+        </TableRow>
+        <TableRow android:layout_width="60dip" android:layout_height="20dip"
+            android:orientation="horizontal">
+            <GridLayout
+                android:layout_width="65dip"
+                android:layout_height="65dip"
+                android:id="@+id/activity_game_board_10" android:orientation="vertical">
+            </GridLayout>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_9"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_8"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_7"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_6"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_5"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_4"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_3"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="38dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_2"
+                android:orientation="vertical"/>
+            <GridLayout android:layout_width="37dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_1"
+                android:orientation="vertical" android:columnCount="2" android:rowCount="2">
+            </GridLayout>
+            <GridLayout android:layout_width="65dip" android:layout_height="65dip"
+                android:id="@+id/activity_game_board_0"
+                android:focusableInTouchMode="true" android:orientation="vertical"
+                android:alignmentMode="alignMargins" android:columnOrderPreserved="false"
+                android:useDefaultMargins="false" android:layoutMode="clipBounds"
+                android:columnCount="2" android:rowCount="2"
+                android:layout_gravity="bottom">
+            </GridLayout>
+        </TableRow>
+    </TableLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_game_iv_square" android:layout_row="4" android:layout_column="2" android:layout_columnSpan="2"
+        android:layout_gravity="bottom|center_horizontal|fill"
+        android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" android:adjustViewBounds="true" android:scaleType="fitXY"
+        android:maxHeight="30dp" android:maxWidth="50dp"/>
+</GridLayout>

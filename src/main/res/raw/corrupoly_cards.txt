@@ -1,0 +1,16 @@
+﻿Envelope,Capital whiten buying art. Pay 100K,PayFeeCommand,100
+Envelope,Aparcas en el carril bus y te multan. Pay 100K,PayFeeCommand,100
+Envelope,Granting a favor to your employer brother. Earn 150k,GetPrizeCommand,150
+Envelope,President sends you a message of support. Earn 200k,GetPrizeCommand,200
+Envelope,Charge salary advising a multinational. Earn 100k,GetPrizeCommand,100
+Envelope,The trip you bought can not be paid in black. Pay 50k,PayFeeCommand,50
+Envelope,Your wife wants to buy a dress. Advances to start and charges,MoveLandCommand,Start
+Envelope,You've been caught counting money. To jail!!,MoveLandCommand,Jail
+BlackCard,Carlos Fabra needs a favor. Advance to his street,MoveLandCommand,Calle Fabra
+BlackCard,Back three boxes,MoveBackwardCommand,3
+BlackCard,Your bank has gone bankrupt,PayFeeCommand,200
+BlackCard,Take a picture with "El pequeño Nicolas",MoveLandCommand,FreeParking
+BlackCard,You do a blind eye to the construction of a new hotel in a beach. Charge 100k,GetPrizeCommand,100
+BlackCard,You'll beers with the Governor of the Bank of Spain. Charge 50K,GetPrizeCommand,50
+BlackCard,You give away some suits to the members of your party. Pay 50K,PayFeeCommand,15
+BlackCard,You got your couple just before spending your savings. Charge 50k,GetPrizeCommand,50

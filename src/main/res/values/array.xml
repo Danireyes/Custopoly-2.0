@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="options">
+        <item>View and mortgage/unmortgage of properties</item>
+        <item>Buy land to other player</item>
+        <item>Leave the game</item>
+        <item>Cancel</item>
+    </array>
+</resources>

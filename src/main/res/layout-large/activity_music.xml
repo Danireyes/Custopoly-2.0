@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="10dp"
+    android:background="@android:color/holo_blue_dark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/musicButtonText"
+        android:id="@+id/textView5"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="90sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/songs">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton"
+            android:checked="true"
+            android:text="@string/song_title1"
+            android:layout_marginTop="50dip"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/song_title2"
+            android:id="@+id/radioButton2"
+            android:checked="false"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dip"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/song_title3"
+            android:id="@+id/radioButton3"
+            android:checked="false"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dip"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/song_title4"
+            android:id="@+id/radioButton4"
+            android:checked="false"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="40dip"
+            android:onClick="onRadioButtonClicked" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:padding="15dp" android:textSize="15pt"
+        android:textStyle="bold" android:id="@+id/ButtonPlayStop"
+        android:layout_gravity="center_horizontal"
+        android:background="#00ffffff" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar01"
+        android:background="#ffffff" />
+
+</LinearLayout>
