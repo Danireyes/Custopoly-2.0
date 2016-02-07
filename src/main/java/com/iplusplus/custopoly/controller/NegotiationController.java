@@ -7,6 +7,7 @@ import android.widget.TabHost;
 
 import com.iplusplus.custopoly.controller.observer.Controller;
 import com.iplusplus.custopoly.model.gamemodel.command.MakeDealCommand;
+import com.iplusplus.custopoly.view.GameActivity;
 import com.iplusplus.custopoly.view.NegotiationActivity;
 import com.iplusplus.custopoly.model.GameTheme;
 import com.iplusplus.custopoly.model.gamemodel.element.Board;
@@ -177,7 +178,7 @@ public class NegotiationController implements Controller {
     public void onRollDiceBegin(Board board, Player currentPlayer) {}
 
     @Override
-    public void onRollDiceEnd(Board board, Player currentPlayer) {}
+    public void onRollDiceEnd(Board board, Player currentPlayer, GameActivity.SquareCell lastCellCurrentPlayer) {}
 
     @Override
     public void onFinishDiceDialog(int diceResult, boolean equal) {}

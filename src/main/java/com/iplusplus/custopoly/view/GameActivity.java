@@ -556,11 +556,12 @@ public class GameActivity extends Activity  {
         }*/
 
         public void addRunnableToThread(Runnable r) {
-            if (r != null)
-                if(t != null) {
+            if (r != null) {
+                if (t != null) {
                     this.t.interrupt();
                 }
                 this.t = new Thread(r);
+            }
         }
 
         public void createImageOfPlayersInCell() {

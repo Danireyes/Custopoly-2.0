@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -190,11 +189,13 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
     }
 
     @Override
-    public void onRollDiceEnd(Board board, final Player currentPlayer) {
+    public void onRollDiceEnd(Board board, final Player currentPlayer, GameActivity.SquareCell lastCellCurrentPlayer) {
         activity.changePlayerOfCell(currentPlayer);
+        Runnable runnable = this.getRunnableFor(lastCellCurrentPlayer);
+        lastCellCurrentPlayer.addRunnableToThread(runnable);
         GameActivity.SquareCell cell = activity.getCells().get(currentPlayer.getLandIndex());
-        Runnable runnable = this.getRunnableFor(cell);
-        cell.addRunnableToThread(runnable);
+        Runnable runnable2 = this.getRunnableFor(cell);
+        cell.addRunnableToThread(runnable2);
         activity.drawPlayers(board);
         activity.drawResources(currentPlayer);
         activity.setEnabledButton("endTurn", true);
@@ -239,8 +240,9 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
     @Override
     public void onFinishDiceDialog(int diceResult, boolean equal) {
         Game g = (Game) this.game;
+        GameActivity.SquareCell lastCellCurrentPlayer = activity.getCells().get(g.getCurrentPlayer().getLandIndex());
         new RollDiceCommand(diceResult, equal).execute(this);
-        onRollDiceEnd(g.getBoard(), g.getCurrentPlayer());
+        onRollDiceEnd(g.getBoard(), g.getCurrentPlayer(), lastCellCurrentPlayer);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.widget.TabHost;
 
 import com.iplusplus.custopoly.controller.observer.Controller;
 import com.iplusplus.custopoly.model.gamemodel.command.MortgageCommand;
+import com.iplusplus.custopoly.view.GameActivity;
 import com.iplusplus.custopoly.view.PropertiesViewActivity;
 import com.iplusplus.custopoly.model.GameTheme;
 import com.iplusplus.custopoly.model.gamemodel.command.SellHouseCommand;
@@ -80,7 +81,7 @@ public class ViewPropertiesController implements Controller {
     }
 
     @Override
-    public void onRollDiceEnd(Board board, Player currentPlayer) {
+    public void onRollDiceEnd(Board board, Player currentPlayer, GameActivity.SquareCell lastCellCurrentPlayer) {
 
     }
 

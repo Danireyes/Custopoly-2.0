@@ -18,7 +18,7 @@ Chance,Advance to Lincoln,MoveLandCommand,Lincoln
 Chance,Take a walk on the Free Parking,MoveLandCommand,FreeParking
 Chance,Your building loan matures. Earn $150k,GetPrizeCommand,150
 Chance,You have won a crossword competition. Charge $100k,GetPrizeCommand,100
-Chance,Take a trip to Glasgow Airport,MoveLandCommand,GlasgowAirport
+Chance,Take a trip to Glasgow Airport,MoveLandCommand,Glasgow Airport
 Chance,Go directly to Jail,MoveLandCommand,Jail
 Chance,Bank pays you dividend of $50K,GetPrizeCommand,50
 Chance,Pay poor tax of $15K,PayFeeCommand,15

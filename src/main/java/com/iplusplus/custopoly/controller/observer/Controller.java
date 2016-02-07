@@ -8,6 +8,7 @@ import com.iplusplus.custopoly.model.gamemodel.element.ColoredLand;
 import com.iplusplus.custopoly.model.gamemodel.element.Game;
 import com.iplusplus.custopoly.model.gamemodel.element.Player;
 import com.iplusplus.custopoly.model.gamemodel.element.PropertyLand;
+import com.iplusplus.custopoly.view.GameActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public interface Controller {
     void onNegotiation();
 
     void onRollDiceBegin(Board board, Player currentPlayer);
-    void onRollDiceEnd(Board board, Player currentPlayer);
+    void onRollDiceEnd(Board board, Player currentPlayer, GameActivity.SquareCell lastCellCurrentPlayer);
     void onFinishDiceDialog(int diceResult, boolean equal);
 
     void onCard(String text, String title);
