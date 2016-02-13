@@ -17,6 +17,9 @@ import com.iplusplus.custopoly.controller.observer.Controller;
 import com.iplusplus.custopoly.Custopoly;
 import com.iplusplus.custopoly.model.gamemodel.command.BuyCommand;
 import com.iplusplus.custopoly.model.gamemodel.command.BuyHouseCommand;
+import com.iplusplus.custopoly.model.gamemodel.command.DrawBlackCardCommand;
+import com.iplusplus.custopoly.model.gamemodel.command.DrawCardCommand;
+import com.iplusplus.custopoly.model.gamemodel.command.DrawEnvelopeCommand;
 import com.iplusplus.custopoly.model.gamemodel.command.EndTurnCommand;
 import com.iplusplus.custopoly.model.gamemodel.command.RollDiceCommand;
 import com.iplusplus.custopoly.view.DiceFragment;
@@ -44,6 +47,10 @@ import static java.lang.Thread.sleep;
  * Created by usuario-pc on 29/12/2015.
  */
 public class GameController implements Controller, DiceFragment.DiceDialogListener{
+
+    public GameActivity getActivity() {
+        return activity;
+    }
 
     private GameActivity activity;
     private Game game;
@@ -95,6 +102,7 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
 
     @Override
     public void onTurnBegin(final Board board, final Player player) {
+
         if (!finished) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             String turn = player.getName();
@@ -164,7 +172,7 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
 
         //Set the arguments to pass to the view
         Game g = (Game) game;
-        negotiation.putExtra("game",  g);
+        negotiation.putExtra("game", g);
         ArrayList<Player> players = g.getNotCurrentPlayer();
 
         activity.startActivity(negotiation);
@@ -392,7 +400,6 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
             int displayed = 0;
             @Override
             public void handleMessage(Message msg) {
-
                 int index = cell.getIndex();
 
                 if (displayed == 0) {
@@ -440,25 +447,22 @@ public class GameController implements Controller, DiceFragment.DiceDialogListen
                     boolean finish = false;
 
                     try {
-                        synchronized (this) {
                             sleep(1000);
-                        }
                     } catch (InterruptedException e) {
 
                     }
-                    while (!finish) {
-                        if (cell.getPlayerSkins().size() != numOfPlayers) {
-                            finish = true;
-                        }
-                        if (!finish) {
-                            synchronized (this) {
-                                h.sendEmptyMessage(0);
+                    while (!finish && !cell.getThread().interrupted()) {
+                        synchronized (this) {
+                            if (cell.getPlayerSkins().size() != numOfPlayers) {
+                                finish = true;
                             }
-                            try {
-                                synchronized (this) {
+                            if (!finish) {
+                                h.sendEmptyMessage(0);
+                                try {
                                     sleep(1000);
+                                } catch (InterruptedException e) {
+
                                 }
-                            } catch (InterruptedException e) {
                             }
                         }
                     }

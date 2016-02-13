@@ -68,6 +68,7 @@ public class GameActivity extends Activity  {
     protected void onCreate(Bundle savedInstanceState) {
         //These will put the View on full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setTitle("Custopoly");
         Intent intent = getIntent();
         Game game = (Game) intent.getSerializableExtra("game");
         super.onCreate(savedInstanceState);
@@ -556,10 +557,10 @@ public class GameActivity extends Activity  {
         }*/
 
         public void addRunnableToThread(Runnable r) {
+            if (t != null) {
+                this.t.interrupt();
+            }
             if (r != null) {
-                if (t != null) {
-                    this.t.interrupt();
-                }
                 this.t = new Thread(r);
             }
         }
@@ -572,9 +573,11 @@ public class GameActivity extends Activity  {
                 playerView.setImageResource(Utilities.getResId(this.playerSkins.get(i), R.drawable.class));
                 addPlayerView(playerView);
             }
-            if (this.playerSkins.size() > 1)
+
+            if (this.playerSkins.size() > 1) {
+                if (!this.t.isAlive())
                     this.t.start();
-            else
+            } else
                 this.t = null;
         }
 
@@ -588,6 +591,10 @@ public class GameActivity extends Activity  {
 
         public void removePlayerSkin(String skin) {
             playerSkins.remove(skin);
+        }
+
+        public Thread getThread() {
+            return t;
         }
     }
 
